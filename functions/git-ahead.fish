@@ -1,9 +1,9 @@
 function git-ahead -a ahead behind diverged none
   not git-is-repo; and return
 
-  set -l commit-count (command git rev-list --count --left-right "@{upstream}...HEAD" 2> /dev/null)
+  set -l commit_count (command git rev-list --count --left-right "@{upstream}...HEAD" 2> /dev/null)
 
-  switch "$commit-count"
+  switch "$commit_count"
   case ""
     # no upstream
   case "0"\t"0"
